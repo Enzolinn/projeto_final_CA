@@ -1,0 +1,19 @@
+Criar um todo
+curl -s -X POST http://localhost:5000/todos \
+  -H "Content-Type: application/json" \
+  -d '{"title":"Comprar cimento","done":false}' | jq
+
+
+Listar todos
+curl -s http://localhost:5000/todos | jq
+
+Pegar por id
+curl -s http://localhost:5000/todos/1 | jq
+
+Atualizar
+curl -s -X PUT http://localhost:5000/todos/1 \
+  -H "Content-Type: application/json" \
+  -d '{"done":true}' | jq
+
+Deletar
+curl -s -X DELETE http://localhost:5000/todos/1 | jq
